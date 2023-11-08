@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <title>EC2 Instances</title>
+</head>
+<body>
+  <h2>EC2 Instances</h2>
+  <ul>
+    {% for instance in instances %}
+      <li>
+        Name: {{ instance.name }} <br>
+        Instance ID: {{ instance.id }}, State: {{ instance.state }} <br>
+        <a href="{{ url_for('start_instance', instance_id=instance.id) }}">Start</a>
+        <a href="{{ url_for('stop_instance', instance_id=instance.id) }}">Stop</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

@@ -1,0 +1,266 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:48] "[33mGET /robots.txt?1699467948045 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:52] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:53] "[33mGET /robots.txt?1699467953027 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:55] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:55] "[33mGET /robots.txt?1699467955875 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:57] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:25:57] "[33mGET /robots.txt?1699467957382 HTTP/1.1[0m" 404 -
+ERROR:app:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\app.py", line 58, in login
+    login_user(user)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask_login\utils.py", line 184, in login_user
+    session["_user_id"] = user_id
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:26:17] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:26:17] "[33mGET /robots.txt?1699467977861 HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:07] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:07] "[33mGET /robots.txt?1699468027760 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+ERROR:app:Exception on /instances [GET]
+Traceback (most recent call last):
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\app.py", line 82, in instances
+    instances = ec2.describe_instances()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\botocore\client.py", line 535, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\botocore\client.py", line 980, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AuthFailure) when calling the DescribeInstances operation: AWS was not able to validate the provided access credentials
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:16] "[35m[1mGET /instances HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:16] "[33mGET /robots.txt?1699468036208 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:27:16] "[33mGET /robots.txt?1699468036208 HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:45] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:45] "[33mGET /robots.txt?1699468185734 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:55] "GET /instances HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:55] "[33mGET /robots.txt?1699468195408 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:29:55] "[33mGET /robots.txt?1699468195409 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:02] "GET /instances HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:02] "[33mGET /robots.txt?1699468262790 HTTP/1.1[0m" 404 -
+ERROR:app:Exception on /start/i-01cc46e4266244851 [GET]
+Traceback (most recent call last):
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\app.py", line 91, in start_instance
+    log_instance_action(user_id=current_user.id, action='START', instance_id=instance_id)
+NameError: name 'current_user' is not defined
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:20] "[35m[1mGET /start/i-01cc46e4266244851 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:20] "[33mGET /robots.txt?1699468280713 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:34] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:34] "[33mGET /robots.txt?1699468294756 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:39] "GET /instances HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:39] "[33mGET /robots.txt?1699468299467 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:42] "GET /instances HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:42] "[33mGET /robots.txt?1699468302166 HTTP/1.1[0m" 404 -
+ERROR:app:Exception on /stop/i-01cc46e4266244851 [GET]
+Traceback (most recent call last):
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\Micha³Biernat\OneDrive\Python\AWS_Console\app.py", line 100, in stop_instance
+    log_instance_action(user_id=current_user.id, action='STOP', instance_id=instance_id)
+NameError: name 'current_user' is not defined
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:53] "[35m[1mGET /stop/i-01cc46e4266244851 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2023 19:31:53] "[33mGET /robots.txt?1699468313268 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:18,326:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:41:18,326:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:41:31,121:INFO:127.0.0.1 - - [08/Nov/2023 19:41:31] "GET /login HTTP/1.1" 200 -
+2023-11-08 19:41:31,238:INFO:127.0.0.1 - - [08/Nov/2023 19:41:31] "[33mGET /robots.txt?1699468891198 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:42,715:INFO:127.0.0.1 - - [08/Nov/2023 19:41:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-11-08 19:41:43,012:INFO:127.0.0.1 - - [08/Nov/2023 19:41:43] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:43,077:INFO:127.0.0.1 - - [08/Nov/2023 19:41:43] "[33mGET /robots.txt?1699468903058 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:43,080:INFO:127.0.0.1 - - [08/Nov/2023 19:41:43] "[33mGET /robots.txt?1699468903058 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:46,979:INFO:User: admin@example.com, Action: STOP, Instance ID: i-0254daf0d8e5edeb7, Timestamp: 2023-11-08T19:41:46.979958
+2023-11-08 19:41:46,981:INFO:127.0.0.1 - - [08/Nov/2023 19:41:46] "[32mGET /stop/i-0254daf0d8e5edeb7 HTTP/1.1[0m" 302 -
+2023-11-08 19:41:47,104:INFO:127.0.0.1 - - [08/Nov/2023 19:41:47] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:47,160:INFO:127.0.0.1 - - [08/Nov/2023 19:41:47] "[33mGET /robots.txt?1699468907142 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:47,162:INFO:127.0.0.1 - - [08/Nov/2023 19:41:47] "[33mGET /robots.txt?1699468907142 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:51,049:INFO:127.0.0.1 - - [08/Nov/2023 19:41:51] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:51,108:INFO:127.0.0.1 - - [08/Nov/2023 19:41:51] "[33mGET /robots.txt?1699468911090 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:52,084:INFO:127.0.0.1 - - [08/Nov/2023 19:41:52] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:52,144:INFO:127.0.0.1 - - [08/Nov/2023 19:41:52] "[33mGET /robots.txt?1699468912127 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:53,040:INFO:127.0.0.1 - - [08/Nov/2023 19:41:53] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:53,116:INFO:127.0.0.1 - - [08/Nov/2023 19:41:53] "[33mGET /robots.txt?1699468913097 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:54,006:INFO:127.0.0.1 - - [08/Nov/2023 19:41:54] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:54,062:INFO:127.0.0.1 - - [08/Nov/2023 19:41:54] "[33mGET /robots.txt?1699468914046 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:54,828:INFO:127.0.0.1 - - [08/Nov/2023 19:41:54] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:54,878:INFO:127.0.0.1 - - [08/Nov/2023 19:41:54] "[33mGET /robots.txt?1699468914865 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:55,671:INFO:127.0.0.1 - - [08/Nov/2023 19:41:55] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:55,778:INFO:127.0.0.1 - - [08/Nov/2023 19:41:55] "[33mGET /robots.txt?1699468915754 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:56,629:INFO:127.0.0.1 - - [08/Nov/2023 19:41:56] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:56,693:INFO:127.0.0.1 - - [08/Nov/2023 19:41:56] "[33mGET /robots.txt?1699468916674 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:57,718:INFO:127.0.0.1 - - [08/Nov/2023 19:41:57] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:57,786:INFO:127.0.0.1 - - [08/Nov/2023 19:41:57] "[33mGET /robots.txt?1699468917768 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:58,599:INFO:127.0.0.1 - - [08/Nov/2023 19:41:58] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:58,656:INFO:127.0.0.1 - - [08/Nov/2023 19:41:58] "[33mGET /robots.txt?1699468918638 HTTP/1.1[0m" 404 -
+2023-11-08 19:41:59,464:INFO:127.0.0.1 - - [08/Nov/2023 19:41:59] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:41:59,520:INFO:127.0.0.1 - - [08/Nov/2023 19:41:59] "[33mGET /robots.txt?1699468919505 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:00,906:INFO:127.0.0.1 - - [08/Nov/2023 19:42:00] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:00,966:INFO:127.0.0.1 - - [08/Nov/2023 19:42:00] "[33mGET /robots.txt?1699468920950 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:01,690:INFO:127.0.0.1 - - [08/Nov/2023 19:42:01] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:01,745:INFO:127.0.0.1 - - [08/Nov/2023 19:42:01] "[33mGET /robots.txt?1699468921730 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:02,575:INFO:127.0.0.1 - - [08/Nov/2023 19:42:02] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:02,639:INFO:127.0.0.1 - - [08/Nov/2023 19:42:02] "[33mGET /robots.txt?1699468922625 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:03,417:INFO:127.0.0.1 - - [08/Nov/2023 19:42:03] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:03,470:INFO:127.0.0.1 - - [08/Nov/2023 19:42:03] "[33mGET /robots.txt?1699468923456 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:05,144:INFO:127.0.0.1 - - [08/Nov/2023 19:42:05] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:05,195:INFO:127.0.0.1 - - [08/Nov/2023 19:42:05] "[33mGET /robots.txt?1699468925181 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:05,940:INFO:127.0.0.1 - - [08/Nov/2023 19:42:05] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:05,994:INFO:127.0.0.1 - - [08/Nov/2023 19:42:05] "[33mGET /robots.txt?1699468925977 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:06,738:INFO:127.0.0.1 - - [08/Nov/2023 19:42:06] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:06,788:INFO:127.0.0.1 - - [08/Nov/2023 19:42:06] "[33mGET /robots.txt?1699468926774 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:07,725:INFO:127.0.0.1 - - [08/Nov/2023 19:42:07] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:07,826:INFO:127.0.0.1 - - [08/Nov/2023 19:42:07] "[33mGET /robots.txt?1699468927768 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:08,584:INFO:127.0.0.1 - - [08/Nov/2023 19:42:08] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:08,633:INFO:127.0.0.1 - - [08/Nov/2023 19:42:08] "[33mGET /robots.txt?1699468928619 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:13,789:INFO:127.0.0.1 - - [08/Nov/2023 19:42:13] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:13,864:INFO:127.0.0.1 - - [08/Nov/2023 19:42:13] "[33mGET /robots.txt?1699468933841 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:14,647:INFO:127.0.0.1 - - [08/Nov/2023 19:42:14] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:14,730:INFO:127.0.0.1 - - [08/Nov/2023 19:42:14] "[33mGET /robots.txt?1699468934707 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:15,339:INFO:127.0.0.1 - - [08/Nov/2023 19:42:15] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:15,398:INFO:127.0.0.1 - - [08/Nov/2023 19:42:15] "[33mGET /robots.txt?1699468935383 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:36,783:INFO:User: admin@example.com, Action: START, Instance ID: i-01cc46e4266244851, Timestamp: 2023-11-08T19:42:36.783480
+2023-11-08 19:42:36,784:INFO:127.0.0.1 - - [08/Nov/2023 19:42:36] "[32mGET /start/i-01cc46e4266244851 HTTP/1.1[0m" 302 -
+2023-11-08 19:42:36,902:INFO:127.0.0.1 - - [08/Nov/2023 19:42:36] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:42:36,965:INFO:127.0.0.1 - - [08/Nov/2023 19:42:36] "[33mGET /robots.txt?1699468956941 HTTP/1.1[0m" 404 -
+2023-11-08 19:42:36,966:INFO:127.0.0.1 - - [08/Nov/2023 19:42:36] "[33mGET /robots.txt?1699468956942 HTTP/1.1[0m" 404 -
+2023-11-08 19:43:00,010:INFO:127.0.0.1 - - [08/Nov/2023 19:43:00] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:43:00,079:INFO:127.0.0.1 - - [08/Nov/2023 19:43:00] "[33mGET /robots.txt?1699468980062 HTTP/1.1[0m" 404 -
+2023-11-08 19:43:01,039:INFO:127.0.0.1 - - [08/Nov/2023 19:43:01] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:43:01,091:INFO:127.0.0.1 - - [08/Nov/2023 19:43:01] "[33mGET /robots.txt?1699468981077 HTTP/1.1[0m" 404 -
+2023-11-08 19:43:01,894:INFO:127.0.0.1 - - [08/Nov/2023 19:43:01] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:43:01,945:INFO:127.0.0.1 - - [08/Nov/2023 19:43:01] "[33mGET /robots.txt?1699468981930 HTTP/1.1[0m" 404 -
+2023-11-08 19:43:04,868:INFO:User: admin@example.com, Action: STOP, Instance ID: i-01cc46e4266244851, Timestamp: 2023-11-08T19:43:04.868382
+2023-11-08 19:43:04,869:INFO:127.0.0.1 - - [08/Nov/2023 19:43:04] "[32mGET /stop/i-01cc46e4266244851 HTTP/1.1[0m" 302 -
+2023-11-08 19:43:04,994:INFO:127.0.0.1 - - [08/Nov/2023 19:43:04] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:43:05,058:INFO:127.0.0.1 - - [08/Nov/2023 19:43:05] "[33mGET /robots.txt?1699468985035 HTTP/1.1[0m" 404 -
+2023-11-08 19:43:05,059:INFO:127.0.0.1 - - [08/Nov/2023 19:43:05] "[33mGET /robots.txt?1699468985036 HTTP/1.1[0m" 404 -
+2023-11-08 19:47:51,812:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:47:51,813:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:47:59,109:INFO:127.0.0.1 - - [08/Nov/2023 19:47:59] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:47:59,193:INFO:127.0.0.1 - - [08/Nov/2023 19:47:59] "[33mGET /robots.txt?1699469279169 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:00,161:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:49:00,161:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:49:09,122:INFO:127.0.0.1 - - [08/Nov/2023 19:49:09] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:49:09,181:INFO:127.0.0.1 - - [08/Nov/2023 19:49:09] "[33mGET /robots.txt?1699469349166 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:10,191:INFO:127.0.0.1 - - [08/Nov/2023 19:49:10] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:49:10,241:INFO:127.0.0.1 - - [08/Nov/2023 19:49:10] "[33mGET /robots.txt?1699469350228 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:13,720:INFO:127.0.0.1 - - [08/Nov/2023 19:49:13] "GET /login HTTP/1.1" 200 -
+2023-11-08 19:49:13,787:INFO:127.0.0.1 - - [08/Nov/2023 19:49:13] "[33mGET /robots.txt?1699469353761 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:26,502:INFO:127.0.0.1 - - [08/Nov/2023 19:49:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-11-08 19:49:26,630:INFO:127.0.0.1 - - [08/Nov/2023 19:49:26] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:49:26,691:INFO:127.0.0.1 - - [08/Nov/2023 19:49:26] "[33mGET /robots.txt?1699469366675 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:26,694:INFO:127.0.0.1 - - [08/Nov/2023 19:49:26] "[33mGET /robots.txt?1699469366675 HTTP/1.1[0m" 404 -
+2023-11-08 19:49:49,990:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:49:49,990:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:49:56,953:INFO:127.0.0.1 - - [08/Nov/2023 19:49:56] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:49:57,026:INFO:127.0.0.1 - - [08/Nov/2023 19:49:57] "[33mGET /robots.txt?1699469397003 HTTP/1.1[0m" 404 -
+2023-11-08 19:52:46,327:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:52:46,328:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:53:13,617:INFO:127.0.0.1 - - [08/Nov/2023 19:53:13] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:53:13,679:INFO:127.0.0.1 - - [08/Nov/2023 19:53:13] "[33mGET /robots.txt?1699469593655 HTTP/1.1[0m" 404 -
+2023-11-08 19:53:35,651:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:53:35,652:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:55:17,564:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:55:17,565:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:55:21,460:INFO:127.0.0.1 - - [08/Nov/2023 19:55:21] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:55:21,538:INFO:127.0.0.1 - - [08/Nov/2023 19:55:21] "[33mGET /robots.txt?1699469721509 HTTP/1.1[0m" 404 -
+2023-11-08 19:56:58,346:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 19:56:58,347:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 19:57:07,108:INFO:127.0.0.1 - - [08/Nov/2023 19:57:07] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:57:07,170:INFO:127.0.0.1 - - [08/Nov/2023 19:57:07] "[33mGET /robots.txt?1699469827145 HTTP/1.1[0m" 404 -
+2023-11-08 19:58:22,866:INFO:User: admin@example.com, Action: START, Instance ID: i-0254daf0d8e5edeb7, Timestamp: 2023-11-08T19:58:22.866194
+2023-11-08 19:58:22,867:INFO:127.0.0.1 - - [08/Nov/2023 19:58:22] "[32mGET /start/i-0254daf0d8e5edeb7 HTTP/1.1[0m" 302 -
+2023-11-08 19:58:22,992:INFO:127.0.0.1 - - [08/Nov/2023 19:58:22] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:58:23,043:INFO:127.0.0.1 - - [08/Nov/2023 19:58:23] "[33mGET /robots.txt?1699469903024 HTTP/1.1[0m" 404 -
+2023-11-08 19:58:23,046:INFO:127.0.0.1 - - [08/Nov/2023 19:58:23] "[33mGET /robots.txt?1699469903024 HTTP/1.1[0m" 404 -
+2023-11-08 19:58:25,377:INFO:127.0.0.1 - - [08/Nov/2023 19:58:25] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:58:25,427:INFO:127.0.0.1 - - [08/Nov/2023 19:58:25] "[33mGET /robots.txt?1699469905412 HTTP/1.1[0m" 404 -
+2023-11-08 19:58:26,367:INFO:127.0.0.1 - - [08/Nov/2023 19:58:26] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:58:26,426:INFO:127.0.0.1 - - [08/Nov/2023 19:58:26] "[33mGET /robots.txt?1699469906407 HTTP/1.1[0m" 404 -
+2023-11-08 19:58:27,129:INFO:127.0.0.1 - - [08/Nov/2023 19:58:27] "GET /instances HTTP/1.1" 200 -
+2023-11-08 19:58:27,207:INFO:127.0.0.1 - - [08/Nov/2023 19:58:27] "[33mGET /robots.txt?1699469907188 HTTP/1.1[0m" 404 -
+2023-11-08 20:05:43,364:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-08 20:05:43,364:INFO:[33mPress CTRL+C to quit[0m
+2023-11-08 20:05:53,157:INFO:127.0.0.1 - - [08/Nov/2023 20:05:53] "[31m[1mGET /instances HTTP/1.1[0m" 401 -
+2023-11-08 20:05:53,231:INFO:127.0.0.1 - - [08/Nov/2023 20:05:53] "[33mGET /robots.txt?1699470353205 HTTP/1.1[0m" 404 -
+2023-11-08 20:05:59,689:INFO:127.0.0.1 - - [08/Nov/2023 20:05:59] "GET / HTTP/1.1" 200 -
+2023-11-08 20:05:59,741:INFO:127.0.0.1 - - [08/Nov/2023 20:05:59] "[33mGET /robots.txt?1699470359725 HTTP/1.1[0m" 404 -
+2023-11-08 20:06:11,775:INFO:127.0.0.1 - - [08/Nov/2023 20:06:11] "GET /login HTTP/1.1" 200 -
+2023-11-08 20:06:11,833:INFO:127.0.0.1 - - [08/Nov/2023 20:06:11] "[33mGET /robots.txt?1699470371817 HTTP/1.1[0m" 404 -
+2023-11-08 20:06:22,212:INFO:127.0.0.1 - - [08/Nov/2023 20:06:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-11-08 20:06:22,502:INFO:127.0.0.1 - - [08/Nov/2023 20:06:22] "GET /instances HTTP/1.1" 200 -
+2023-11-08 20:06:22,557:INFO:127.0.0.1 - - [08/Nov/2023 20:06:22] "[33mGET /robots.txt?1699470382540 HTTP/1.1[0m" 404 -
+2023-11-08 20:06:22,558:INFO:127.0.0.1 - - [08/Nov/2023 20:06:22] "[33mGET /robots.txt?1699470382540 HTTP/1.1[0m" 404 -
+2023-11-08 20:06:26,234:INFO:User: admin@example.com, Action: STOP, Instance ID: i-0254daf0d8e5edeb7, Timestamp: 2023-11-08T20:06:26.234816
+2023-11-08 20:06:26,234:INFO:127.0.0.1 - - [08/Nov/2023 20:06:26] "[32mGET /stop/i-0254daf0d8e5edeb7 HTTP/1.1[0m" 302 -
+2023-11-08 20:06:26,355:INFO:127.0.0.1 - - [08/Nov/2023 20:06:26] "GET /instances HTTP/1.1" 200 -
+2023-11-08 20:06:26,414:INFO:127.0.0.1 - - [08/Nov/2023 20:06:26] "[33mGET /robots.txt?1699470386392 HTTP/1.1[0m" 404 -
+2023-11-08 20:06:26,416:INFO:127.0.0.1 - - [08/Nov/2023 20:06:26] "[33mGET /robots.txt?1699470386393 HTTP/1.1[0m" 404 -
