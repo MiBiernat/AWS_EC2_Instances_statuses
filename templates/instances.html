@@ -10,6 +10,7 @@
       <li>
         Name: {{ instance.name }} <br>
         Instance ID: {{ instance.id }}, State: {{ instance.state }} <br>
+        Public IPv4 DNS: {{ instance.public_dns }} <br> <!-- Add this line -->
         <a href="{{ url_for('start_instance', instance_id=instance.id) }}">Start</a>
         <a href="{{ url_for('stop_instance', instance_id=instance.id) }}">Stop</a>
       </li>
