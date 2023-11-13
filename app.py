@@ -100,13 +100,15 @@ def instances():
                     if tag['Key'] == 'Name':
                         instance_name = tag['Value']
                         break
-            # Append instance information including name
+            # Append instance information including name and Public IPv4 DNS
             instances_info.append({
                 'id': instance['InstanceId'],
                 'state': instance['State']['Name'],
-                'name': instance_name
+                'name': instance_name,
+                'public_dns': instance.get('PublicDnsName', '')  # Add this line
             })
     return render_template('instances.html', instances=instances_info)
+
 
 
 @app.route('/start/<instance_id>')
