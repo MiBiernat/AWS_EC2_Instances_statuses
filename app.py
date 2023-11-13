@@ -22,7 +22,7 @@ login_manager.init_app(app)
 # Dummy user database
 users = {
     'admin@example.com': {'password': 'secret'},
-    'adambemowski@gmail.com': {'password': 'adambemowski@gmail.com'}
+    'adambemowski@gmail.com': {'password': 'TCHCJestTheBest!'}
 }
 
 
