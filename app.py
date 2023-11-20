@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime
@@ -12,6 +14,7 @@ logging.basicConfig(filename='instance_log.txt', level=logging.INFO,
 
 load_dotenv()
 
+
 app = Flask(__name__)
 app.secret_key = os.getenv('your-secret-key')
 
@@ -19,11 +22,8 @@ app.secret_key = os.getenv('your-secret-key')
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Dummy user database
-users = {
-    'admin@example.com': {'password': 'secret'},
-    'adambemowski@gmail.com': {'password': 'TCHCJestTheBest!'}
-}
+with open('users.json') as f:
+    users = json.load(f)
 
 
 class User(UserMixin):
@@ -138,4 +138,6 @@ def log_instance_action(user_id, action, instance_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080, host="0.0.0.0")
+    app.run(debug=True,
+            port=8080),
+            host="0.0.0.0")
