@@ -1,12 +1,14 @@
 import json
-
-from flask import Flask, render_template, request, redirect, url_for
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from datetime import datetime
-import boto3
 import logging
-from dotenv import load_dotenv
 import os
+from datetime import datetime
+
+import boto3
+from dotenv import load_dotenv
+from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from pydantic import BaseModel
+from starlette.responses import RedirectResponse
 
 # Configure logging
 logging.basicConfig(filename='instance_log.txt', level=logging.INFO,
@@ -14,69 +16,17 @@ logging.basicConfig(filename='instance_log.txt', level=logging.INFO,
 
 load_dotenv()
 
+app = FastAPI()
+security = HTTPBasic()
 
-app = Flask(__name__)
-app.secret_key = os.getenv('your-secret-key')
-
-# Flask-Login setup
-login_manager = LoginManager()
-login_manager.init_app(app)
-
+# Load user data
 with open('users.json') as f:
     users = json.load(f)
 
 
-class User(UserMixin):
-    pass
-
-
-@login_manager.user_loader
-def user_loader(email):
-    if email not in users:
-        return
-
-    user = User()
-    user.id = email
-    return user
-
-
-@login_manager.request_loader
-def request_loader(request):
-    email = request.form.get('email')
-    if email not in users:
-        return
-
-    user = User()
-    user.id = email
-    user.is_authenticated = request.form['password'] == users[email]['password']
-
-    return user
-
-
-@app.route('/')
-def index():
-    return 'Hello, World!'
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        if email in users and request.form['password'] == users[email]['password']:
-            user = User()
-            user.id = email
-            login_user(user)
-            return redirect(url_for('instances'))
-
-        return 'Bad login'
-
-    return render_template('login.html')
-
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
+# User model for response
+class User(BaseModel):
+    email: str
 
 
 # Initialize Boto3 EC2 client
@@ -88,56 +38,80 @@ ec2 = boto3.client(
 )
 
 
-@app.route('/instances')
-@login_required
-def instances():
-    # List all instances
+# Helper function for authentication
+def authenticate_user(credentials: HTTPBasicCredentials):
+    email = credentials.username
+    password = credentials.password
+
+    if email in users and password == users[email]['password']:
+        return User(email=email)
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+
+
+@app.post("/login")
+def login(credentials: HTTPBasicCredentials = Depends(security)):
+    user = authenticate_user(credentials)
+    return user
+
+
+@app.get("/instances", response_model=list)
+def list_instances(credentials: HTTPBasicCredentials = Depends(security)):
+    _ = authenticate_user(credentials)  # Authenticate user
+
     reservations = ec2.describe_instances()['Reservations']
     instances_info = []
     for reservation in reservations:
         for instance in reservation['Instances']:
-            # Get the instance name from tags
             instance_name = ''
             if 'Tags' in instance:
                 for tag in instance['Tags']:
                     if tag['Key'] == 'Name':
                         instance_name = tag['Value']
                         break
-            # Append instance information including name and Public IPv4 DNS
             instances_info.append({
                 'id': instance['InstanceId'],
                 'state': instance['State']['Name'],
                 'name': instance_name,
-                'public_dns': instance.get('PublicDnsName', '')  # Add this line
+                'public_dns': instance.get('PublicDnsName', '')
             })
-    return render_template('instances.html', instances=instances_info)
+    return instances_info
 
 
-
-@app.route('/start/<instance_id>')
-@login_required
-def start_instance(instance_id):
-    # Start an EC2 instance
+@app.post("/start/{instance_id}")
+def start_instance(instance_id: str, credentials: HTTPBasicCredentials = Depends(security)):
+    user = authenticate_user(credentials)
     ec2.start_instances(InstanceIds=[instance_id])
-    log_instance_action(user_id=current_user.id, action='START', instance_id=instance_id)
-    return redirect(url_for('instances'))
+    log_instance_action(user_id=user.email, action='START', instance_id=instance_id)
+    return {"message": "Instance started"}
 
 
-@app.route('/stop/<instance_id>')
-@login_required
-def stop_instance(instance_id):
-    # Stop an EC2 instance
+@app.post("/stop/{instance_id}")
+def stop_instance(instance_id: str, credentials: HTTPBasicCredentials = Depends(security)):
+    user = authenticate_user(credentials)
     ec2.stop_instances(InstanceIds=[instance_id])
-    log_instance_action(user_id=current_user.id, action='STOP', instance_id=instance_id)
-    return redirect(url_for('instances'))
+    log_instance_action(user_id=user.email, action='STOP', instance_id=instance_id)
+    return {"message": "Instance stopped"}
 
 
 def log_instance_action(user_id, action, instance_id):
     logging.info(
         f"User: {user_id}, Action: {action}, Instance ID: {instance_id}, Timestamp: {datetime.now().isoformat()}")
 
+    # To run the server, use "uvicorn filename:app --reload"
+    f"User: {user_id}, Action: {action}, Instance ID: {instance_id}, Timestamp: {datetime.now().isoformat()}"
 
-if __name__ == '__main__':
-    app.run(debug=True,
-            port=8080,
-            host="0.0.0.0")
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, port=8080)
