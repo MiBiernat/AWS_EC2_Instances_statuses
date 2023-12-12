@@ -2,13 +2,12 @@ import json
 import logging
 import os
 from datetime import datetime
-
 import boto3
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel
-from starlette.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure logging
 logging.basicConfig(filename='instance_log.txt', level=logging.INFO,
@@ -18,6 +17,14 @@ load_dotenv()
 
 app = FastAPI()
 security = HTTPBasic()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load user data
 with open('users.json') as f:
